@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'AngularJS style CSRF protection for Rails'
   s.license     = 'MIT'
 
-  s.files = Dir['{app,config}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
+  s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
 
   s.add_development_dependency 'rake', '~> 10.1.0'
