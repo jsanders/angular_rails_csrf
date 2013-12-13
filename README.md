@@ -10,7 +10,7 @@ Note that there is nothing AngularJS specific here, and this will work with any 
 
 Add this line to your application's Gemfile:
 
-    gem 'angular_rails_csrf', github: 'jsanders/angular_rails_csrf', branch: 'master'
+    gem 'angular_rails_csrf'
 
 And then execute:
 
