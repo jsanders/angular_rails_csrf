@@ -11,7 +11,11 @@ module AngularRailsCsrf
     end
 
     def verified_request?
-      super || form_authenticity_token == request.headers['X-XSRF-TOKEN']
+      if respond_to?(:valid_authenticity_token?, true)
+        super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
+      else
+        super || form_authenticity_token == request.headers['X-XSRF-TOKEN']
+      end
     end
   end
 end
