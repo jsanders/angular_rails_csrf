@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    angular_rails_csrf (1.0.2)
+    angular_rails_csrf (1.0.3)
       rails (>= 3, < 5)
 
 GEM
