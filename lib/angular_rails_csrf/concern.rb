@@ -3,7 +3,7 @@ module AngularRailsCsrf
     extend ActiveSupport::Concern
 
     included do
-      after_filter :set_xsrf_token_cookie
+      before_filter :set_xsrf_token_cookie
     end
 
     def set_xsrf_token_cookie
