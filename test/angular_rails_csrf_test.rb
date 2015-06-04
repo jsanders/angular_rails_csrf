@@ -3,14 +3,9 @@ require 'test_helper'
 class AngularRailsCsrfTest < ActionController::TestCase
   tests ApplicationController
 
-  setup do
-    @controller.allow_forgery_protection = true
-    @correct_token = @controller.send(:form_authenticity_token)
-  end
-
   test "a get sets the XSRF-TOKEN cookie but does not require the X-XSRF-TOKEN header" do
     get :index
-    assert_equal @correct_token, cookies['XSRF-TOKEN']
+    assert_valid_cookie
     assert_response :success
   end
 
@@ -21,15 +16,33 @@ class AngularRailsCsrfTest < ActionController::TestCase
   end
 
   test "a post raises an error with the X-XSRF-TOKEN header set to the wrong value" do
-    @request.headers['X-XSRF-TOKEN'] = 'garbage'
+    set_header_to 'garbage'
     assert_raises ActionController::InvalidAuthenticityToken do
       post :create
     end
   end
 
   test "a post is accepted if X-XSRF-TOKEN is set properly" do
-    @request.headers['X-XSRF-TOKEN'] = @correct_token
+    set_header_to @controller.send(:form_authenticity_token)
     post :create
+    assert_valid_cookie
     assert_response :success
+  end
+
+  private
+
+  # Helpers
+
+  def set_header_to(value)
+    # Rails 3 uses `env` and Rails 4 uses `headers`
+    @request.env['X-XSRF-TOKEN'] = @request.headers['X-XSRF-TOKEN'] = value
+  end
+
+  def assert_valid_cookie
+    if @controller.respond_to?(:valid_authenticity_token?, true)
+      assert @controller.send(:valid_authenticity_token?, session, cookies['XSRF-TOKEN'])
+    else
+      assert_equal @controller.send(:form_authenticity_token), cookies['XSRF-TOKEN']
+    end
   end
 end
