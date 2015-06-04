@@ -2,7 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require "action_controller/railtie"
 
-Bundler.require(*Rails.groups)
+Bundler.require(:default, Rails.env)
 require "angular_rails_csrf"
 
 module Dummy
