@@ -7,7 +7,10 @@ module AngularRailsCsrf
     end
 
     def set_xsrf_token_cookie
-      cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
+      cookies['XSRF-TOKEN'] = {
+        value: form_authenticity_token,
+        httponly: true
+      } if protect_against_forgery?
     end
 
     def verified_request?
