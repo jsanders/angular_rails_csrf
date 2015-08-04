@@ -4,7 +4,7 @@ module AngularRailsCsrf
 
     included do
       before_filter :set_xsrf_token_cookie
-      after_filter :set_xsrf_token_cookie, unless: -> { response.committed? }
+      after_filter :set_xsrf_token_cookie, unless: -> { response.committed? if response.respond_to?(:committed?) }
     end
 
     def set_xsrf_token_cookie
