@@ -17,11 +17,11 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
 
-  s.add_development_dependency 'rake', '~> 10.1.0'
-  s.add_development_dependency 'test-unit', '~> 3.1.1'
+  s.add_development_dependency 'rake', '>= 10.1.0'
+  s.add_development_dependency 'test-unit', '>= 3.1.1'
   unless ENV['TEST_RAILS_VERSION'].nil?
     s.add_development_dependency 'rails', ENV['TEST_RAILS_VERSION'].to_s
   end
 
-  s.add_runtime_dependency 'rails', '>= 3', '< 5'
+  s.add_runtime_dependency 'rails', '>= 3', '< 5.1'
 end
