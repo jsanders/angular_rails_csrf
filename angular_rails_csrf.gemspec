@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
     s.add_development_dependency 'rails', ENV['TEST_RAILS_VERSION'].to_s
   end
 
-  s.add_runtime_dependency 'rails', '>= 3', '< 5'
+  s.add_runtime_dependency 'rails', '>= 3', '<= 5'
 end
