@@ -6,6 +6,7 @@ rvm:
   - 2.0.0
   - 2.1
   - 2.2
+  - 2.2.0
 env:
   - 'TEST_RAILS_VERSION="~> 3.0.0"'
   - 'TEST_RAILS_VERSION="~> 3.1.0"'
@@ -13,3 +14,4 @@ env:
   - 'TEST_RAILS_VERSION="~> 4.0.0"'
   - 'TEST_RAILS_VERSION="~> 4.1.0"'
   - 'TEST_RAILS_VERSION="~> 4.2.0"'
+  - 'TEST_RAILS_VERSION="~> 5.0.0"'
