@@ -2,10 +2,8 @@ language: ruby
 sudo: false
 cache: bundler
 rvm:
-  - 2.0.0
-  - 2.1
-  - 2.2
-  - 2.3
+  - 2.2.5
+  - 2.3.0
 env:
   - 'TEST_RAILS_VERSION="~> 3.0.0"'
   - 'TEST_RAILS_VERSION="~> 3.1.0"'
