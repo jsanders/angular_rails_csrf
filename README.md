@@ -11,7 +11,7 @@ Note that there is nothing AngularJS specific here, and this will work with any 
 
 ### Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's *Gemfile*:
 
     gem 'angular_rails_csrf'
 
@@ -20,3 +20,15 @@ And then execute:
     $ bundle
 
 That's it!
+
+### Exclusions
+
+Sometimes you will want to skip setting the XSRF token for certain controllers (for example, when using SSE or ActionCable, as discussed [here](https://github.com/jsanders/angular_rails_csrf/issues/7)):
+
+```ruby
+class ExclusionsController < ApplicationController
+  exclude_xsrf_token_cookie
+  
+  # your actions here...
+end
+```
