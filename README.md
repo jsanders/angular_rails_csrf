@@ -1,6 +1,7 @@
 ## AngularJS-style CSRF Protection for Rails
 
 [![Build Status](https://travis-ci.org/jsanders/angular_rails_csrf.png)](https://travis-ci.org/jsanders/angular_rails_csrf)
+[![Dependency Status](https://gemnasium.com/badges/github.com/jsanders/angular_rails_csrf.svg)](https://gemnasium.com/github.com/jsanders/angular_rails_csrf)
 
 The AngularJS [ng.$http](http://docs.angularjs.org/api/ng.$http) service has built-in CSRF protection. By default, it looks for a cookie named `XSRF-TOKEN` and, if found, writes its value into an `X-XSRF-TOKEN` header, which the server compares with the CSRF token saved in the user's session.
 
