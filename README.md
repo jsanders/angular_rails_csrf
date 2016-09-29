@@ -32,3 +32,7 @@ class ExclusionsController < ApplicationController
   # your actions here...
 end
 ```
+
+### License 
+
+Licensed under the [MIT License](https://github.com/jsanders/angular_rails_csrf/blob/master/LICENSE).
