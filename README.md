@@ -1,5 +1,6 @@
 ## AngularJS-style CSRF Protection for Rails
 
+[![Gem Version](https://badge.fury.io/rb/angular_rails_csrf.svg)](https://badge.fury.io/rb/angular_rails_csrf)
 [![Build Status](https://travis-ci.org/jsanders/angular_rails_csrf.png)](https://travis-ci.org/jsanders/angular_rails_csrf)
 [![Dependency Status](https://gemnasium.com/badges/github.com/jsanders/angular_rails_csrf.svg)](https://gemnasium.com/github.com/jsanders/angular_rails_csrf)
 
