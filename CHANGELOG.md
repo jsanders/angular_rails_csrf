@@ -8,6 +8,7 @@ Updated:
 Testing improvements:
 * Tested against Rails 5.1
 * Tested against Ruby 2.4.0
+* We are no longer testing against Rails < 4.2
 
 ## 2.0.0
 
