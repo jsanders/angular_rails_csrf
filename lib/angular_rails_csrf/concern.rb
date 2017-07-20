@@ -17,10 +17,12 @@ module AngularRailsCsrf
     end
 
     def verified_request?
+      downcase_headers = request.headers.to_a.map { |v| [v.first.downcase, v.last] }.to_h
+
       if respond_to?(:valid_authenticity_token?, true)
-        super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
+        super || valid_authenticity_token?(session, downcase_headers['x-xsrf-token'])
       else
-        super || form_authenticity_token == request.headers['X-XSRF-TOKEN']
+        super || form_authenticity_token == downcase_headers['x-xsrf-token']
       end
     end
 

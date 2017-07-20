@@ -29,13 +29,20 @@ class AngularRailsCsrfTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "a post is accepted if X-XSRF-TOKEN is set properly, regardless of case" do
+    set_header_to @controller.send(:form_authenticity_token), 'x-XsRf-TOKEN'
+    post :create
+    assert_valid_cookie
+    assert_response :success
+  end
+
   private
 
   # Helpers
 
-  def set_header_to(value)
+  def set_header_to(value, key = 'X-XSRF-TOKEN')
     # Rails 3 uses `env` and Rails 4 uses `headers`
-    @request.env['X-XSRF-TOKEN'] = @request.headers['X-XSRF-TOKEN'] = value
+    @request.env[key] = @request.headers[key] = value
   end
 
   def assert_valid_cookie
