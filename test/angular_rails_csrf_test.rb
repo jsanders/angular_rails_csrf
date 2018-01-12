@@ -7,6 +7,17 @@ class AngularRailsCsrfTest < ActionController::TestCase
     get :index
     assert_valid_cookie
     assert_response :success
+    assert_equal @response.headers['Set-Cookie'].include?('.test.host'), false
+  end
+
+  test "the domain is used if present" do
+    config = Rails.application.config
+    def config.angular_rails_csrf_domain; :all; end
+
+    get :index
+    assert @response.headers['Set-Cookie'].include?('.test.host')
+    assert_valid_cookie
+    assert_response :success
   end
 
   test "a post raises an error without the X-XSRF-TOKEN header set" do
