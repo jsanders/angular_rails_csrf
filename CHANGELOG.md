@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.1
+
+Updated:
+* Added support for Rails 5.1.1
+
+Testing:
+* Test against more recent versions of Ruby
+* Test against Rails 5.1.1
+
 ## 2.1.0
 
 Updated:
