@@ -3,11 +3,7 @@ module AngularRailsCsrf
     extend ActiveSupport::Concern
 
     included do
-      if Rails::VERSION::MAJOR < 4
-        after_filter :set_xsrf_token_cookie
-      else
-        after_action :set_xsrf_token_cookie
-      end
+      after_action :set_xsrf_token_cookie
     end
 
     def set_xsrf_token_cookie

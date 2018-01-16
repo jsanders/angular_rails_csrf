@@ -34,8 +34,7 @@ class AngularRailsCsrfTest < ActionController::TestCase
   # Helpers
 
   def set_header_to(value)
-    # Rails 3 uses `env` and Rails 4 uses `headers`
-    @request.env['X-XSRF-TOKEN'] = @request.headers['X-XSRF-TOKEN'] = value
+    @request.headers['X-XSRF-TOKEN'] = value
   end
 
   def assert_valid_cookie

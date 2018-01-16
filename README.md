@@ -10,6 +10,8 @@ This project adds direct support for this scheme to your Rails application witho
 
 Note that there is nothing AngularJS specific here, and this will work with any other front-end that implements the same scheme.
 
+*Version 3 supports only Rails 4+ and Ruby 2.3+. If you are still on Rails 3 (2, 1?!), you have to utilize version 2.1.1!*
+
 ### Installation
 
 Add this line to your application's *Gemfile*:
@@ -32,6 +34,20 @@ class ExclusionsController < ApplicationController
   
   # your actions here...
 end
+```
+
+## Testing
+
+Run
+
+```console
+$ bundle install
+```
+
+and then
+
+```console
+$ rake test
 ```
 
 ### License 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.0.0 (unreleased)
+
+Updated:
+* Dropped support for Rails < 4
+
+Testing:
+* Test against more recent versions of Ruby and Rails
+* Dropped official support for Ruby 2.2 though it should still work
+
 ## 2.1.1
 
 Updated:
