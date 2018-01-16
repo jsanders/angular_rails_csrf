@@ -12,7 +12,7 @@ Note that there is nothing AngularJS specific here, and this will work with any 
 
 *Version 3 supports only Rails 4+ and Ruby 2.3+. If you are still on Rails 3 (2, 1?!), you have to utilize version 2.1.1!*
 
-### Installation
+## Installation
 
 Add this line to your application's *Gemfile*:
 
@@ -24,7 +24,7 @@ And then execute:
 
 That's it!
 
-### Exclusions
+## Exclusions
 
 Sometimes you will want to skip setting the XSRF token for certain controllers (for example, when using SSE or ActionCable, as discussed [here](https://github.com/jsanders/angular_rails_csrf/issues/7)):
 
@@ -50,6 +50,6 @@ and then
 $ rake test
 ```
 
-### License 
+## License 
 
 Licensed under the [MIT License](https://github.com/jsanders/angular_rails_csrf/blob/master/LICENSE).
