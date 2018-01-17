@@ -4,7 +4,6 @@ cache: bundler
 rvm:
   - 2.3.6
   - 2.4.3
-  - 2.5.0
 env:
   - 'TEST_RAILS_VERSION="~> 4.2.10"'
   - 'TEST_RAILS_VERSION="~> 5.0.6"'
