@@ -3,7 +3,7 @@
 ## 3.0.0
 
 New feature:
-* Allow cookie domain to be set via `Rails.application.config` (thanks, @gingermusketeer)
+* Allow cookie domain to be set via `Rails.application.config` (thanks, [@gingermusketeer](https://github.com/gingermusketeer))
 
 Updated:
 * Dropped support for Rails < 4
