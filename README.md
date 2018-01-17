@@ -24,7 +24,22 @@ And then execute:
 
 That's it!
 
-## Exclusions
+## Configuration
+### Cookie Domain
+
+Starting from version 3, you may set domain for the XSRF cookie:
+
+```ruby
+# application.rb
+class Application < Rails::Application
+  #...
+  config.angular_rails_csrf_domain = :all
+end
+```
+
+If `angular_rails_csrf_domain` is not set, it defaults to `nil`.
+
+### Exclusions
 
 Sometimes you will want to skip setting the XSRF token for certain controllers (for example, when using SSE or ActionCable, as discussed [here](https://github.com/jsanders/angular_rails_csrf/issues/7)):
 

@@ -1,13 +1,16 @@
 # Changelog
 
-## 3.0.0 (unreleased)
+## 3.0.0
+
+New feature:
+* Allow cookie domain to be set via `Rails.application.config` (thanks, @gingermusketeer)
 
 Updated:
 * Dropped support for Rails < 4
+* Dropped official support for Ruby 2.2 though it should still work
 
 Testing:
 * Test against more recent versions of Ruby and Rails
-* Dropped official support for Ruby 2.2 though it should still work
 
 ## 2.1.1
 
