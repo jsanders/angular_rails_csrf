@@ -29,6 +29,16 @@ class AngularRailsCsrfTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "the domain is used if present" do
+    config = Rails.application.config
+    def config.angular_rails_csrf_domain; :all; end
+
+    get :index
+    assert @response.headers['Set-Cookie'].include?('.test.host')
+    assert_valid_cookie
+    assert_response :success
+  end
+
   private
 
   # Helpers
