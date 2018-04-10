@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.1.0
+
+Updated:
+* Added support for Rails 5.2.0
+
+Testing:
+* Tested against more recent Ruby/Rails versions
+
 ## 3.0.0
 
 New feature:
