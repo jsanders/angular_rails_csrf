@@ -8,7 +8,7 @@ rvm:
 
 before_install:
   - gem update --system
-  - gem update bundler
+  - gem install bundler
 
 env:
   - 'TEST_RAILS_VERSION="~> 4.2.10"'
