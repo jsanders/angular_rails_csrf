@@ -39,6 +39,15 @@ class AngularRailsCsrfTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "a custom name is used if present" do
+    use_custom_cookie_name do
+      get :index
+      assert @response.headers['Set-Cookie'].include?('CUSTOM-COOKIE-NAME')
+      assert_valid_cookie('CUSTOM-COOKIE-NAME')
+      assert_response :success
+    end
+  end
+
   private
 
   # Helpers
@@ -47,11 +56,19 @@ class AngularRailsCsrfTest < ActionController::TestCase
     @request.headers['X-XSRF-TOKEN'] = value
   end
 
-  def assert_valid_cookie
+  def assert_valid_cookie(name = 'XSRF-TOKEN')
     if @controller.respond_to?(:valid_authenticity_token?, true)
-      assert @controller.send(:valid_authenticity_token?, session, cookies['XSRF-TOKEN'])
+      assert @controller.send(:valid_authenticity_token?, session, cookies[name])
     else
       assert_equal @controller.send(:form_authenticity_token), cookies['XSRF-TOKEN']
     end
+  end
+
+  def use_custom_cookie_name
+    config = Rails.application.config
+    def config.angular_rails_csrf_cookie_name; 'CUSTOM-COOKIE-NAME'; end
+    yield
+  ensure
+    config.instance_eval('undef :angular_rails_csrf_cookie_name')
   end
 end
