@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.0
+
+New feature:
+* Allow cookie's name to be customized (thanks, [@timobleeker](https://github.com/timobleeker))
+
 ## 3.1.0
 
 Updated:

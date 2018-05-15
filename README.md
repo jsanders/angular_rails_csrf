@@ -24,6 +24,19 @@ And then execute:
 That's it!
 
 ## Configuration
+
+### Cookie Name
+
+The default cookie's name is `XSRF-TOKEN` but it can be configured with the `angular_rails_csrf_cookie_name` setting:
+
+```ruby
+# application.rb
+class Application < Rails::Application
+  #...
+  config.angular_rails_csrf_cookie_name = 'CUSTOM_NAME'
+end
+```
+
 ### Cookie Domain
 
 Starting from version 3, you may set domain for the XSRF cookie:
