@@ -4,7 +4,7 @@ cache: bundler
 rvm:
   - 2.3.7
   - 2.4.4
-  - 2.5.1
+  - 2.5.5
 
 before_install:
   - gem update --system
@@ -14,4 +14,4 @@ env:
   - 'TEST_RAILS_VERSION="~> 4.2.10"'
   - 'TEST_RAILS_VERSION="~> 5.0.7"'
   - 'TEST_RAILS_VERSION="~> 5.1.6"'
-  - 'TEST_RAILS_VERSION="~> 5.2.0"'
+  - 'TEST_RAILS_VERSION="~> 5.2.3"'
