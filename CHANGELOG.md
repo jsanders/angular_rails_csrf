@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0 (unreleased)
+
+Updated:
+* Added support for Rails 6.0
+* Drop support for Rails 4
+
 ## 3.2.0
 
 New feature:
