@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0 (unreleased)
+## 4.0.0 (20-Aug-19)
 
 Updated:
 * Added support for Rails 6.0
