@@ -10,7 +10,7 @@ This project adds direct support for this scheme to your Rails application witho
 
 Note that there is nothing AngularJS specific here, and this will work with any other front-end that implements the same scheme.
 
-Check [version compatibility](https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatability) to learn which Rails/Rubies are currently supported.
+Check [version compatibility](https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatibility) to learn which Rails/Rubies are currently supported.
 
 ## Installation
 
