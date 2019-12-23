@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/angular_rails_csrf.svg)](https://badge.fury.io/rb/angular_rails_csrf)
 [![Build Status](https://travis-ci.org/jsanders/angular_rails_csrf.svg)](https://travis-ci.org/jsanders/angular_rails_csrf)
+[![Test Coverage](https://codecov.io/gh/jsanders/angular_rails_csrf/graph/badge.svg)](https://codecov.io/gh/jsanders/angular_rails_csrf)
 
 The AngularJS [ng.$http](http://docs.angularjs.org/api/ng.$http) service has built-in CSRF protection. By default, it looks for a cookie named `XSRF-TOKEN` and, if found, writes its value into an `X-XSRF-TOKEN` header, which the server compares with the CSRF token saved in the user's session.
 
@@ -9,7 +10,7 @@ This project adds direct support for this scheme to your Rails application witho
 
 Note that there is nothing AngularJS specific here, and this will work with any other front-end that implements the same scheme.
 
-*Version 3 supports only Rails 4+ and Ruby 2.3+. If you are still on Rails 3 (2, 1?!), you have to utilize version 2.1.1!*
+Check [version compatibility](https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatability) to learn which Rails/Rubies are currently supported.
 
 ## Installation
 
