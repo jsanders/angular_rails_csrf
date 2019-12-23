@@ -1,11 +1,13 @@
-$:.push File.expand_path("../lib", __FILE__)
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
-require "angular_rails_csrf/version"
+require 'angular_rails_csrf/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "angular_rails_csrf"
+  s.name        = 'angular_rails_csrf'
   s.version     = AngularRailsCsrf::VERSION
   s.authors     = ['James Sanders', 'Ilya Bodrov']
   s.email       = ['sanderjd@gmail.com', 'golosizpru@gmail.com']
@@ -19,13 +21,18 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.3.0'
 
-  s.add_development_dependency 'rake', '~> 12.0'
+  s.add_development_dependency 'rake', '~> 13.0'
   s.add_development_dependency 'test-unit', '~> 3.2'
   if ENV['TEST_RAILS_VERSION'].nil?
-    s.add_development_dependency 'rails', '6.0.0'
+    s.add_development_dependency 'rails', '6.0.2.1'
   else
     s.add_development_dependency 'rails', ENV['TEST_RAILS_VERSION'].to_s
   end
 
   s.add_runtime_dependency 'railties', '>= 3', '< 7'
+
+  s.add_development_dependency 'codecov',                   '~> 0.1'
+  s.add_development_dependency 'rubocop',                   '~> 0.60'
+  s.add_development_dependency 'rubocop-performance',       '~> 1.5'
+  s.add_development_dependency 'simplecov',                 '~> 0.16'
 end

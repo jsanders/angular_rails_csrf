@@ -1,9 +1,11 @@
-require File.expand_path('../boot', __FILE__)
+# frozen_string_literal: true
 
-require "action_controller/railtie"
+require File.expand_path('boot', __dir__)
+
+require 'action_controller/railtie'
 
 Bundler.require(:default, Rails.env)
-require "angular_rails_csrf"
+require 'angular_rails_csrf'
 
 module Dummy
   class Application < Rails::Application
@@ -12,4 +14,3 @@ module Dummy
     config.active_support.test_order = :random
   end
 end
-

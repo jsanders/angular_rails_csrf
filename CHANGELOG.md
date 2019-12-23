@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.1 (23-Dec-19)
+
+* Updated dependencies, tested against more recent Rubies and Rails
+* Updated Gemfile for Bundler 2
+* Added Rubocop and SimpleCov
+
 ## 4.0.0 (20-Aug-19)
 
 Updated:

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AngularRailsCsrf
   module Concern
     extend ActiveSupport::Concern
@@ -7,12 +9,12 @@ module AngularRailsCsrf
     end
 
     def set_xsrf_token_cookie
-      if protect_against_forgery? && !respond_to?(:__exclude_xsrf_token_cookie?)
-        config = Rails.application.config
-        domain = config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil
-        cookie_name = config.respond_to?(:angular_rails_csrf_cookie_name) ? config.angular_rails_csrf_cookie_name : 'XSRF-TOKEN'
-        cookies[cookie_name] = { value: form_authenticity_token, domain: domain }
-      end
+      return unless protect_against_forgery? && !respond_to?(:__exclude_xsrf_token_cookie?)
+
+      config = Rails.application.config
+      domain = config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil
+      cookie_name = config.respond_to?(:angular_rails_csrf_cookie_name) ? config.angular_rails_csrf_cookie_name : 'XSRF-TOKEN'
+      cookies[cookie_name] = {value: form_authenticity_token, domain: domain}
     end
 
     def verified_request?
@@ -25,7 +27,7 @@ module AngularRailsCsrf
 
     module ClassMethods
       def exclude_xsrf_token_cookie
-        self.class_eval do
+        class_eval do
           def __exclude_xsrf_token_cookie?
             true
           end
