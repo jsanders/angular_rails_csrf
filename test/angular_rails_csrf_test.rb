@@ -41,6 +41,23 @@ class AngularRailsCsrfTest < ActionController::TestCase
     assert @response.headers['Set-Cookie'].include?('.test.host')
     assert_valid_cookie
     assert_response :success
+  ensure
+    config.instance_eval('undef :angular_rails_csrf_domain')
+  end
+
+  test 'the secure flag is set if configured' do
+    @request.headers['HTTPS'] = 'on'
+
+    config = Rails.application.config
+    config.define_singleton_method(:angular_rails_csrf_secure) { true }
+
+    get :index
+    assert @response.headers['Set-Cookie'].include?('secure')
+    assert_valid_cookie
+    assert_response :success
+  ensure
+    @request.headers['HTTPS'] = nil
+    config.instance_eval('undef :angular_rails_csrf_secure')
   end
 
   test 'a custom name is used if present' do
