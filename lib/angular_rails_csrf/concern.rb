@@ -12,9 +12,15 @@ module AngularRailsCsrf
       return unless protect_against_forgery? && !respond_to?(:__exclude_xsrf_token_cookie?)
 
       config = Rails.application.config
-      domain = config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil
+
+      cookie_options = {
+        value: form_authenticity_token,
+        domain: config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil
+      }
+      cookie_options[:secure] = config.angular_rails_csrf_secure if config.respond_to?(:angular_rails_csrf_secure)
+
       cookie_name = config.respond_to?(:angular_rails_csrf_cookie_name) ? config.angular_rails_csrf_cookie_name : 'XSRF-TOKEN'
-      cookies[cookie_name] = {value: form_authenticity_token, domain: domain}
+      cookies[cookie_name] = cookie_options
     end
 
     def verified_request?
