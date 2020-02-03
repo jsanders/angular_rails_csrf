@@ -52,6 +52,20 @@ end
 
 If `angular_rails_csrf_domain` is not set, it defaults to `nil`.
 
+### Secure Cookie
+
+To set a "secure" flag for the cookie, set the `angular_rails_csrf_secure` option to `true`:
+
+```ruby
+# application.rb
+class Application < Rails::Application
+  #...
+  config.angular_rails_csrf_secure = true
+end
+```
+
+`angular_rails_csrf_secure` defaults to `false`.
+
 ### Exclusions
 
 Sometimes you will want to skip setting the XSRF token for certain controllers (for example, when using SSE or ActionCable, as discussed [here](https://github.com/jsanders/angular_rails_csrf/issues/7)):
@@ -59,7 +73,7 @@ Sometimes you will want to skip setting the XSRF token for certain controllers (
 ```ruby
 class ExclusionsController < ApplicationController
   exclude_xsrf_token_cookie
-  
+
   # your actions here...
 end
 ```
@@ -78,6 +92,6 @@ and then
 $ rake test
 ```
 
-## License 
+## License
 
 Licensed under the [MIT License](https://github.com/jsanders/angular_rails_csrf/blob/master/LICENSE).

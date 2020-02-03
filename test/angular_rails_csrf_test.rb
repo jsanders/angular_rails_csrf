@@ -32,32 +32,36 @@ class AngularRailsCsrfTest < ActionController::TestCase
   end
 
   test 'the domain is used if present' do
-    config = Rails.application.config
-    def config.angular_rails_csrf_domain
-      :all
-    end
+    begin
+      config = Rails.application.config
+      def config.angular_rails_csrf_domain
+        :all
+      end
 
-    get :index
-    assert @response.headers['Set-Cookie'].include?('.test.host')
-    assert_valid_cookie
-    assert_response :success
-  ensure
-    config.instance_eval('undef :angular_rails_csrf_domain')
+      get :index
+      assert @response.headers['Set-Cookie'].include?('.test.host')
+      assert_valid_cookie
+      assert_response :success
+    ensure
+      config.instance_eval('undef :angular_rails_csrf_domain', __FILE__, __LINE__)
+    end
   end
 
   test 'the secure flag is set if configured' do
-    @request.headers['HTTPS'] = 'on'
+    begin
+      @request.headers['HTTPS'] = 'on'
 
-    config = Rails.application.config
-    config.define_singleton_method(:angular_rails_csrf_secure) { true }
+      config = Rails.application.config
+      config.define_singleton_method(:angular_rails_csrf_secure) { true }
 
-    get :index
-    assert @response.headers['Set-Cookie'].include?('secure')
-    assert_valid_cookie
-    assert_response :success
-  ensure
-    @request.headers['HTTPS'] = nil
-    config.instance_eval('undef :angular_rails_csrf_secure')
+      get :index
+      assert @response.headers['Set-Cookie'].include?('secure')
+      assert_valid_cookie
+      assert_response :success
+    ensure
+      @request.headers['HTTPS'] = nil
+      config.instance_eval('undef :angular_rails_csrf_secure', __FILE__, __LINE__)
+    end
   end
 
   test 'a custom name is used if present' do

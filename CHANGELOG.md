@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.1.0 (03-Feb-20)
+
+* Added a new [`angular_rails_csrf_secure` option](https://github.com/jsanders/angular_rails_csrf#secure-cookie) (thanks, [@DougKeller](https://github.com/DougKeller))
+* Tested against Ruby 2.7
+
 ## 4.0.1 (23-Dec-19)
 
 * Updated dependencies, tested against more recent Rubies and Rails
