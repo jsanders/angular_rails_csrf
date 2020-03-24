@@ -66,6 +66,20 @@ end
 
 `angular_rails_csrf_secure` defaults to `false`.
 
+### SameSite
+
+The SameSite attribute now defaults to `:lax`. You can override this in the config:
+
+```ruby
+# application.rb
+class Application < Rails::Application
+  #...
+  config.angular_rails_csrf_same_site = :strict
+end
+```
+
+**NOTE**: When using `SameSite=None` you should also set `Secure`. Use the above `angular_rails_csrf_secure` config for that.
+
 ### Exclusions
 
 Sometimes you will want to skip setting the XSRF token for certain controllers (for example, when using SSE or ActionCable, as discussed [here](https://github.com/jsanders/angular_rails_csrf/issues/7)):

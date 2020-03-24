@@ -73,6 +73,27 @@ class AngularRailsCsrfTest < ActionController::TestCase
     end
   end
 
+  test 'same_site is set to Lax by default' do
+      get :index
+      assert @response.headers['Set-Cookie'].include?('SameSite=Lax')
+      assert_valid_cookie
+      assert_response :success
+  end
+
+  test 'same_site can be configured' do
+    begin
+      config = Rails.application.config
+      config.define_singleton_method(:angular_rails_csrf_same_site) { :strict }
+
+      get :index
+      assert @response.headers['Set-Cookie'].include?('SameSite=Strict')
+      assert_valid_cookie
+      assert_response :success
+    ensure
+      config.instance_eval('undef :angular_rails_csrf_same_site', __FILE__, __LINE__)
+    end
+  end
+
   private
 
   # Helpers
