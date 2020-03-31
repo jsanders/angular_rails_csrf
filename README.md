@@ -68,7 +68,7 @@ end
 
 ### SameSite
 
-The SameSite attribute now defaults to `:lax`. You can override this in the config:
+The SameSite attribute defaults to `:lax`. You can override this in the config:
 
 ```ruby
 # application.rb
@@ -78,7 +78,7 @@ class Application < Rails::Application
 end
 ```
 
-**NOTE**: When using `SameSite=None`, this gem automatically sets the cookie to `Secure`.
+**NOTE**: When using `config.angular_rails_csrf_same_site = :none`, this gem automatically sets the cookie to `Secure` (`config.angular_rails_csrf_secure = true`) to comply with [the specifications](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
 
 ### Exclusions
 

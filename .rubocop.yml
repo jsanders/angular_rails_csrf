@@ -21,10 +21,13 @@ Layout/LineLength:
 
 Metrics/MethodLength:
   CountComments: false
-  Max: 10
+  Max: 15
 
 Metrics/ModuleLength:
-  Max: 100
+  Max: 150
+
+Metrics/ClassLength:
+  Max: 150
 
 Metrics/ParameterLists:
   Max: 5

@@ -74,10 +74,10 @@ class AngularRailsCsrfTest < ActionController::TestCase
   end
 
   test 'same_site is set to Lax by default' do
-      get :index
-      assert @response.headers['Set-Cookie'].include?('SameSite=Lax')
-      assert_valid_cookie
-      assert_response :success
+    get :index
+    assert @response.headers['Set-Cookie'].include?('SameSite=Lax')
+    assert_valid_cookie
+    assert_response :success
   end
 
   test 'same_site can be configured' do

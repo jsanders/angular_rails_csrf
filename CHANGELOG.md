@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.0 (31-Mar-20)
+
+* Added a new [`angular_rails_csrf_same_site` option](https://github.com/jsanders/angular_rails_csrf#samesite) which defaults to `:lax` (thanks, [@timobleeker](https://github.com/timobleeker))
+  + This option is introduced to comply with the latest changes: https://www.chromium.org/updates/same-site
+* Update cops
+
 ## 4.1.0 (03-Feb-20)
 
 * Added a new [`angular_rails_csrf_secure` option](https://github.com/jsanders/angular_rails_csrf#secure-cookie) (thanks, [@DougKeller](https://github.com/DougKeller))

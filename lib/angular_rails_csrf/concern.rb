@@ -13,17 +13,17 @@ module AngularRailsCsrf
 
       config = Rails.application.config
 
-      same_site = config.respond_to?(:angular_rails_csrf_same_site) ? config.angular_rails_csrf_same_site : :lax
-      secure = config.angular_rails_csrf_secure if config.respond_to?(:angular_rails_csrf_secure)
+      same_site = same_site_from config
+      secure = secure_from config
 
       cookie_options = {
         value: form_authenticity_token,
-        domain: config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil,
+        domain: domain_from(config),
         same_site: same_site,
-        secure: same_site == :none || secure
+        secure: same_site.eql?(:none) || secure
       }
 
-      cookie_name = config.respond_to?(:angular_rails_csrf_cookie_name) ? config.angular_rails_csrf_cookie_name : 'XSRF-TOKEN'
+      cookie_name = cookie_name_from config
       cookies[cookie_name] = cookie_options
     end
 
@@ -33,6 +33,24 @@ module AngularRailsCsrf
       else
         super || form_authenticity_token == request.headers['X-XSRF-TOKEN']
       end
+    end
+
+    private
+
+    def same_site_from(config)
+      config.respond_to?(:angular_rails_csrf_same_site) ? config.angular_rails_csrf_same_site : :lax
+    end
+
+    def secure_from(config)
+      config.angular_rails_csrf_secure if config.respond_to?(:angular_rails_csrf_secure)
+    end
+
+    def domain_from(config)
+      config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil
+    end
+
+    def cookie_name_from(config)
+      config.respond_to?(:angular_rails_csrf_cookie_name) ? config.angular_rails_csrf_cookie_name : 'XSRF-TOKEN'
     end
 
     module ClassMethods
