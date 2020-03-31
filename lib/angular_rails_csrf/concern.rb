@@ -13,11 +13,15 @@ module AngularRailsCsrf
 
       config = Rails.application.config
 
+      same_site = config.respond_to?(:angular_rails_csrf_same_site) ? config.angular_rails_csrf_same_site : :lax
+      secure = config.angular_rails_csrf_secure if config.respond_to?(:angular_rails_csrf_secure)
+
       cookie_options = {
         value: form_authenticity_token,
-        domain: config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil
+        domain: config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil,
+        same_site: same_site,
+        secure: same_site == :none || secure
       }
-      cookie_options[:secure] = config.angular_rails_csrf_secure if config.respond_to?(:angular_rails_csrf_secure)
 
       cookie_name = config.respond_to?(:angular_rails_csrf_cookie_name) ? config.angular_rails_csrf_cookie_name : 'XSRF-TOKEN'
       cookies[cookie_name] = cookie_options
