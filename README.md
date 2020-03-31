@@ -78,7 +78,7 @@ class Application < Rails::Application
 end
 ```
 
-**NOTE**: When using `SameSite=None` you should also set `Secure`. Use the above `angular_rails_csrf_secure` config for that.
+**NOTE**: When using `SameSite=None`, this gem automatically sets the cookie to `Secure`.
 
 ### Exclusions
 

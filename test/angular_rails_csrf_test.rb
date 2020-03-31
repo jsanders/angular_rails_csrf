@@ -94,6 +94,23 @@ class AngularRailsCsrfTest < ActionController::TestCase
     end
   end
 
+  test 'secure is set automatically when same_site is set to none' do
+    begin
+      @request.headers['HTTPS'] = 'on'
+
+      config = Rails.application.config
+      config.define_singleton_method(:angular_rails_csrf_same_site) { :none }
+
+      get :index
+      assert @response.headers['Set-Cookie'].include?('SameSite=None')
+      assert @response.headers['Set-Cookie'].include?('secure')
+      assert_valid_cookie
+      assert_response :success
+    ensure
+      config.instance_eval('undef :angular_rails_csrf_same_site', __FILE__, __LINE__)
+    end
+  end
+
   private
 
   # Helpers
