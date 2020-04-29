@@ -2,7 +2,7 @@ require:
  - rubocop-performance
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
 
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
@@ -58,12 +58,25 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: 'no_comma'
 
-# These are not safe yet (and we don't use the corresponding methods anyways)
+# new cops
+
 Style/HashEachMethods:
-  Enabled: false
+  Enabled: true
 
 Style/HashTransformKeys:
-  Enabled: false
+  Enabled: true
 
 Style/HashTransformValues:
-  Enabled: false
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true

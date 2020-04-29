@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+* Required Ruby version is now 2.5+ according to [version compatibility](https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatibility)
+* Dropped backwards compatibility with older versions of Rails (v4 and below)
+* Increased test coverage up to 100%
+
 ## 4.2.0 (31-Mar-20)
 
 * Added a new [`angular_rails_csrf_same_site` option](https://github.com/jsanders/angular_rails_csrf#samesite) which defaults to `:lax` (thanks, [@timobleeker](https://github.com/timobleeker))
