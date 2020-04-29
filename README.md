@@ -80,6 +80,8 @@ end
 
 **NOTE**: When using `config.angular_rails_csrf_same_site = :none`, this gem automatically sets the cookie to `Secure` (`config.angular_rails_csrf_secure = true`) to comply with [the specifications](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
 
+Please note that [Safari is known to have issues](https://bugs.webkit.org/show_bug.cgi?id=198181) with SameSite attribute set to `:none`.
+
 ### Exclusions
 
 Sometimes you will want to skip setting the XSRF token for certain controllers (for example, when using SSE or ActionCable, as discussed [here](https://github.com/jsanders/angular_rails_csrf/issues/7)):
