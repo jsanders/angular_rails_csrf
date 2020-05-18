@@ -1,10 +1,10 @@
 # Changelog
 
-## Unreleased
+## 4.3.0 (18-May-20)
 
-* Required Ruby version is now 2.5+ according to [version compatibility](https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatibility)
-* Dropped backwards compatibility with older versions of Rails (v4 and below)
-* Increased test coverage up to 100%
+* Ruby version 2.4 is no longer officially supported (though it still should work) - this is also due to the fact that [v2.4 is abanoded by Ruby core team as well](https://www.ruby-lang.org/en/news/2020/04/05/support-of-ruby-2-4-has-ended/). Required Ruby version is now 2.5+ according to [version compatibility](https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatibility).
+* Dropped backwards compatibility with older versions of Rails (v4 and below). [If you require Rails 4 support, use angular_rails_csrf v3]((https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatibility)).
+* Increased test coverage up to 100%.
 
 ## 4.2.0 (31-Mar-20)
 
