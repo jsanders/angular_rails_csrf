@@ -9,7 +9,7 @@ module AngularRailsCsrf
     end
 
     def set_xsrf_token_cookie
-      return unless protect_against_forgery? && !respond_to?(:__exclude_xsrf_token_cookie?)
+      return unless defined?(protect_against_forgery?) && protect_against_forgery? && !respond_to?(:__exclude_xsrf_token_cookie?)
 
       config = Rails.application.config
 
