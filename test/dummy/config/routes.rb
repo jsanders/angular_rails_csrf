@@ -5,4 +5,6 @@ Dummy::Application.routes.draw do
   post 'test' => 'application#create'
 
   get 'exclusions' => 'exclusions#index'
+
+  get 'index' => 'api#index'
 end
