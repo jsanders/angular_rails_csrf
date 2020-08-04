@@ -2,7 +2,7 @@
 
 ## 4.4.0 (04-Aug-20)
 
-* Make the gem play nicely with controllers that do not have `protect_against_forgery?` method defined - for example, certain Doorkeeper controllers (thanks, [@amenz](https://github.com/amenz))
+* Make the gem play nicely with controllers that do not have `protect_against_forgery?` method defined — for example, certain Doorkeeper controllers (thanks, [@amenz](https://github.com/amenz))
 * Updated dependencies and cops
 
 ## 4.3.0 (18-May-20)
