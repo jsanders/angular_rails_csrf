@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.4.0 (04-Aug-20)
+
+* Make the gem play nicely with controllers that do not have `protect_against_forgery?` method defined - for example, certain Doorkeeper controllers (thanks, [@amenz](https://github.com/amenz))
+* Updated dependencies and cops
+
 ## 4.3.0 (18-May-20)
 
 * Ruby version 2.4 is no longer officially supported (though it still should work) - this is also due to the fact that [v2.4 is abanoded by Ruby core team as well](https://www.ruby-lang.org/en/news/2020/04/05/support-of-ruby-2-4-has-ended/). Required Ruby version is now 2.5+ according to [version compatibility](https://github.com/jsanders/angular_rails_csrf/wiki/Version-Compatibility).

@@ -11,5 +11,4 @@ class AngularRailsCsrfSkipTest < ActionController::TestCase
     assert_nil cookies['XSRF-TOKEN']
     assert_response :success
   end
-
 end
