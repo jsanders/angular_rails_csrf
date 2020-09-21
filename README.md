@@ -82,6 +82,20 @@ end
 
 Please note that [Safari is known to have issues](https://bugs.webkit.org/show_bug.cgi?id=198181) with SameSite attribute set to `:none`.
 
+### HttpOnly Cookie
+
+To set a "httponly" flag for the cookie, set the `angular_rails_csrf_httponly` option to `true`:
+
+```ruby
+# application.rb
+class Application < Rails::Application
+  #...
+  config.angular_rails_csrf_httponly = true
+end
+```
+
+`angular_rails_csrf_httponly` defaults to `false`.
+
 ### Exclusions
 
 Sometimes you will want to skip setting the XSRF token for certain controllers (for example, when using SSE or ActionCable, as discussed [here](https://github.com/jsanders/angular_rails_csrf/issues/7)):
