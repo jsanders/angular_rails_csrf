@@ -14,12 +14,14 @@ module AngularRailsCsrf
       config = Rails.application.config
 
       same_site = same_site_from config
+      httponly = httponly_from config
       secure = secure_from config
 
       cookie_options = {
         value: form_authenticity_token,
         domain: domain_from(config),
         same_site: same_site,
+        httponly: httponly,
         secure: same_site.eql?(:none) || secure
       }
 
@@ -35,6 +37,10 @@ module AngularRailsCsrf
 
     def same_site_from(config)
       config.respond_to?(:angular_rails_csrf_same_site) ? config.angular_rails_csrf_same_site : :lax
+    end
+
+    def httponly_from(config)
+      config.respond_to?(:angular_rails_csrf_httponly) ? config.angular_rails_csrf_httponly : false
     end
 
     def secure_from(config)
