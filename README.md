@@ -84,7 +84,7 @@ Please note that [Safari is known to have issues](https://bugs.webkit.org/show_b
 
 ### HttpOnly Cookie
 
-To set a "httponly" flag for the cookie, set the `angular_rails_csrf_httponly` option to `true`:
+To set the ["httponly" flag](https://owasp.org/www-community/HttpOnly) for your cookie, set the `angular_rails_csrf_httponly` option to `true`:
 
 ```ruby
 # application.rb

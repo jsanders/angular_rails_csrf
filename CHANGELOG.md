@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.5.0 (21-Sep-20)
+
+* Added a new [`HttpOnly` option](https://github.com/jsanders/angular_rails_csrf#httponly-cookie) (thanks, [@Lubo-mir](https://github.com/Lubo-mir))
+* Introduced some code refactorings
+
 ## 4.4.0 (04-Aug-20)
 
 * Make the gem play nicely with controllers that do not have `protect_against_forgery?` method defined — for example, certain Doorkeeper controllers (thanks, [@amenz](https://github.com/amenz))

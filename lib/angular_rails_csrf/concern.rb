@@ -13,19 +13,20 @@ module AngularRailsCsrf
 
       config = Rails.application.config
 
-      same_site = same_site_from config
-      httponly = httponly_from config
-      secure = secure_from config
+      secure = option_from config, :angular_rails_csrf_secure
+      same_site = option_from config, :angular_rails_csrf_same_site, :lax
 
       cookie_options = {
         value: form_authenticity_token,
-        domain: domain_from(config),
+        domain: option_from(config, :angular_rails_csrf_domain),
         same_site: same_site,
-        httponly: httponly,
+        httponly: option_from(config, :angular_rails_csrf_httponly, false),
         secure: same_site.eql?(:none) || secure
       }
 
-      cookie_name = cookie_name_from config
+      cookie_name = option_from(config,
+                                :angular_rails_csrf_cookie_name,
+                                'XSRF-TOKEN')
       cookies[cookie_name] = cookie_options
     end
 
@@ -35,24 +36,10 @@ module AngularRailsCsrf
 
     private
 
-    def same_site_from(config)
-      config.respond_to?(:angular_rails_csrf_same_site) ? config.angular_rails_csrf_same_site : :lax
-    end
-
-    def httponly_from(config)
-      config.respond_to?(:angular_rails_csrf_httponly) ? config.angular_rails_csrf_httponly : false
-    end
-
-    def secure_from(config)
-      config.angular_rails_csrf_secure if config.respond_to?(:angular_rails_csrf_secure)
-    end
-
-    def domain_from(config)
-      config.respond_to?(:angular_rails_csrf_domain) ? config.angular_rails_csrf_domain : nil
-    end
-
-    def cookie_name_from(config)
-      config.respond_to?(:angular_rails_csrf_cookie_name) ? config.angular_rails_csrf_cookie_name : 'XSRF-TOKEN'
+    # Fetches the given option from config
+    # If the option is not set, return a default value
+    def option_from(config, option, default = nil)
+      config.respond_to?(option) ? config.send(option) : default
     end
 
     module ClassMethods
