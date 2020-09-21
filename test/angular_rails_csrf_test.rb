@@ -78,6 +78,18 @@ class AngularRailsCsrfTest < ActionController::TestCase
     end
   end
 
+  test 'the httponly flag is set if configured' do
+    config = Rails.application.config
+    config.define_singleton_method(:angular_rails_csrf_httponly) { true }
+
+    get :index
+    assert @response.headers['Set-Cookie'].include?('HttpOnly')
+    assert_valid_cookie
+    assert_response :success
+  ensure
+    config.instance_eval('undef :angular_rails_csrf_httponly', __FILE__, __LINE__)
+  end
+
   test 'same_site is set to Lax by default' do
     get :index
     assert @response.headers['Set-Cookie'].include?('SameSite=Lax')
