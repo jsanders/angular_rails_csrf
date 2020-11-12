@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 13.0'
   s.add_development_dependency 'test-unit', '~> 3.2'
   if ENV['TEST_RAILS_VERSION'].nil?
-    s.add_development_dependency 'rails', '6.0.3.3'
+    s.add_development_dependency 'rails', '6.0.3.4'
   else
     s.add_development_dependency 'rails', ENV['TEST_RAILS_VERSION'].to_s
   end
@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'railties', '>= 3', '< 7'
 
   s.add_development_dependency 'codecov',                   '~> 0.1'
-  s.add_development_dependency 'rubocop',                   '~> 0.60'
+  s.add_development_dependency 'rubocop',                   '~> 1.0'
   s.add_development_dependency 'rubocop-performance',       '~> 1.5'
   s.add_development_dependency 'simplecov',                 '~> 0.16'
 end
