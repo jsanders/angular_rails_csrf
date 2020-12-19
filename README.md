@@ -17,11 +17,15 @@ Check [version compatibility](https://github.com/jsanders/angular_rails_csrf/wik
 
 Add this line to your application's *Gemfile*:
 
-    gem 'angular_rails_csrf'
+```ruby
+gem 'angular_rails_csrf'
+```
 
 And then execute:
 
-    $ bundle
+```console
+$ bundle
+```
 
 That's it!
 
