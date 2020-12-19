@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+* Test against Rails 6.1.
+* Rails 5.1 is not supported officially anymore (but should still work fine).
+
 ## 4.5.0 (21-Sep-20)
 
 * Added a new [`HttpOnly` option](https://github.com/jsanders/angular_rails_csrf#httponly-cookie) (thanks, [@Lubo-mir](https://github.com/Lubo-mir))
