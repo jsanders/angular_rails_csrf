@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 13.0'
   s.add_development_dependency 'test-unit', '~> 3.2'
   if ENV['TEST_RAILS_VERSION'].nil?
-    s.add_development_dependency 'rails', '6.1.3'
+    s.add_development_dependency 'rails', '6.1.3.1'
   else
     s.add_development_dependency 'rails', ENV['TEST_RAILS_VERSION'].to_s
   end
