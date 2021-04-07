@@ -3,7 +3,9 @@
 ## Unreleased
 
 * Test against Rails 6.1.
+* Test against Ruby 3.0.
 * Rails 5.1 is not supported officially anymore (but should still work fine).
+* Ruby 2.5 is not supported anymore (has reached end of life).
 
 ## 4.5.0 (21-Sep-20)
 
