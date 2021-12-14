@@ -24,15 +24,18 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 13.0'
   s.add_development_dependency 'test-unit', '~> 3.2'
   if ENV['TEST_RAILS_VERSION'].nil?
-    s.add_development_dependency 'rails', '6.1.4.1'
+    s.add_development_dependency 'rails', '7.0.0.rc1'
   else
     s.add_development_dependency 'rails', ENV['TEST_RAILS_VERSION'].to_s
   end
 
-  s.add_runtime_dependency 'railties', '>= 3', '< 7'
+  s.add_runtime_dependency 'railties', '>= 3', '< 8'
 
   s.add_development_dependency 'codecov',                   '~> 0.2'
   s.add_development_dependency 'rubocop',                   '~> 1.0'
   s.add_development_dependency 'rubocop-performance',       '~> 1.5'
   s.add_development_dependency 'simplecov',                 '~> 0.16'
+  s.metadata = {
+    'rubygems_mfa_required' => 'true'
+  }
 end

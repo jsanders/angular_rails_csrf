@@ -2,13 +2,12 @@ language: ruby
 sudo: false
 cache: bundler
 rvm:
-  - 2.6.7
-  - 2.7.3
-  - 3.0.1
+  - 2.7.5
+  - 3.0.3
 
 before_install:
   - gem update bundler
 
 env:
-  - 'TEST_RAILS_VERSION="~> 6.0.3"'
   - 'TEST_RAILS_VERSION="~> 6.1.0"'
+  - 'TEST_RAILS_VERSION="~> 7.0.0.rc1"'

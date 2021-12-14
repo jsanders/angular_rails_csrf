@@ -1,11 +1,12 @@
 # Changelog
 
-## Unreleased
+## 5.0.0
 
-* Test against Rails 6.1.
+* Add support for Rails 7.
+* Test against Rails 6.1 and Rails 7.0.
 * Test against Ruby 3.0.
 * Rails 5.1 is not supported officially anymore (but should still work fine).
-* Ruby 2.5 is not supported anymore (has reached end of life).
+* Ruby < 2.7 is not supported anymore (has reached end of life) but should still work.
 
 ## 4.5.0 (21-Sep-20)
 
