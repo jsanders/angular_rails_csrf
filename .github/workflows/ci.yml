@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        gemfile:
+          - Gemfile
+          - gemfiles/Gemfile-rails-6-1
+          - gemfiles/Gemfile-rails-6-0
+        ruby:
+          - 2.7
+          - '3.0'
+    runs-on: ${{ matrix.os }}
+    env:
+      LOKALISE_API_TOKEN: 123abc
+      LOKALISE_PROJECT_ID: 672198945b7d72fc048021.15940510
+      BUNDLE_GEMFILE: ${{ matrix.gemfile }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
+    - run: bundle exec rake test
