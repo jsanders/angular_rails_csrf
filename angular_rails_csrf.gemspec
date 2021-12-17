@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.6.0'
 
   s.add_runtime_dependency 'railties', '>= 3', '< 8'
-  
+
   s.metadata = {
     'rubygems_mfa_required' => 'true'
   }
