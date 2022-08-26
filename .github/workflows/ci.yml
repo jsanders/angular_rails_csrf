@@ -17,10 +17,9 @@ jobs:
         ruby:
           - 2.7
           - '3.0'
+          - 3.1
     runs-on: ${{ matrix.os }}
     env:
-      LOKALISE_API_TOKEN: 123abc
-      LOKALISE_PROJECT_ID: 672198945b7d72fc048021.15940510
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     steps:
     - uses: actions/checkout@v2

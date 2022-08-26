@@ -9,7 +9,7 @@ require 'angular_rails_csrf/version'
 Gem::Specification.new do |s|
   s.name        = 'angular_rails_csrf'
   s.version     = AngularRailsCsrf::VERSION
-  s.authors     = ['James Sanders', 'Ilya Bodrov-Krukowski']
+  s.authors     = ['James Sanders', 'Ilya Krukowski']
   s.email       = ['sanderjd@gmail.com', 'golosizpru@gmail.com']
   s.homepage    = 'https://github.com/jsanders/angular_rails_csrf'
   s.summary     = 'Support for AngularJS $http service style CSRF protection in Rails'
@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
-  s.test_files = Dir['test/**/*']
 
   s.required_ruby_version = '>= 2.6.0'
 
