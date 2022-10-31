@@ -1,6 +1,6 @@
 # Changelog
 
-## 5.0.0
+## 5.0.0 (14-Dec-21)
 
 * Add support for Rails 7.
 * Test against Rails 6.1 and Rails 7.0.
