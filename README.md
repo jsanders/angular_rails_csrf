@@ -2,7 +2,6 @@
 
 ![Gem](https://img.shields.io/gem/v/angular_rails_csrf)
 ![CI](https://github.com/jsanders/angular_rails_csrf/actions/workflows/ci.yml/badge.svg)
-[![Test Coverage](https://codecov.io/gh/jsanders/angular_rails_csrf/graph/badge.svg)](https://codecov.io/gh/jsanders/angular_rails_csrf)
 ![Downloads total](https://img.shields.io/gem/dt/angular_rails_csrf)
 
 The AngularJS [ng.$http](http://docs.angularjs.org/api/ng.$http) service has built-in CSRF protection. By default, it looks for a cookie named `XSRF-TOKEN` and, if found, writes its value into an `X-XSRF-TOKEN` header, which the server compares with the CSRF token saved in the user's session.

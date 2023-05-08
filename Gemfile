@@ -5,8 +5,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
-  gem 'codecov', '~> 0.2'
-  gem 'rails', '7.0.4'
+  gem 'rails', '7.0.4.3'
   gem 'rake', '~> 13.0'
   gem 'rubocop', '~> 1.0'
   gem 'rubocop-performance', '~> 1.5'

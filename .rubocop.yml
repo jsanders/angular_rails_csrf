@@ -5,56 +5,13 @@ AllCops:
   TargetRubyVersion: 2.6
   NewCops: enable
 
-Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-
 Metrics/BlockLength:
   Max: 36
   Exclude:
     - spec/**/*.rb
 
-Metrics/BlockNesting:
-  Max: 2
-
-Layout/LineLength:
-  AllowURI: true
-  Enabled: false
-
-Metrics/MethodLength:
-  CountComments: false
-  Max: 15
-
-Metrics/ModuleLength:
-  Max: 150
-
 Metrics/ClassLength:
   Max: 150
 
-Metrics/ParameterLists:
-  Max: 5
-  CountKeywordArgs: true
-
-Style/CollectionMethods:
-  Enabled: true
-  PreferredMethods:
-    collect:  'map'
-    collect!: 'map!'
-    inject:   'reduce'
-    find:     'detect'
-    find_all: 'select'
-    delete:   'gsub'
-
 Style/Documentation:
   Enabled: false
-
-Layout/DotPosition:
-  EnforcedStyle: trailing
-
-Layout/AccessModifierIndentation:
-  Enabled: false
-
-Style/TrailingCommaInArrayLiteral:
-  EnforcedStyleForMultiline: 'no_comma'
-
-Style/TrailingCommaInHashLiteral:
-  EnforcedStyleForMultiline: 'no_comma'

@@ -9,10 +9,5 @@ SimpleCov.start do
   add_filter '.github/'
 end
 
-if ENV['CI'] == 'true'
-  require 'codecov'
-  SimpleCov.formatter = SimpleCov::Formatter::Codecov
-end
-
 require File.expand_path('dummy/config/environment.rb', __dir__)
 require 'rails/test_help'
