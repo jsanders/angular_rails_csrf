@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.0.0 (14-Nov-23)
+
+* **Breaking change**: drop support for Ruby < 3. If you need to support older Rubies, stay on v5
+* Test only with Rails 7
+* Fix some failing tests, minor tweaks
+
 ## 5.0.0 (14-Dec-21)
 
 * Add support for Rails 7.
