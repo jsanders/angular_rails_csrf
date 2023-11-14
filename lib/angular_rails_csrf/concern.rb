@@ -17,7 +17,6 @@ module AngularRailsCsrf
                                 :angular_rails_csrf_cookie_name,
                                 'XSRF-TOKEN')
 
-
       cookies[cookie_name] = cookie_options_from(config)
     end
 

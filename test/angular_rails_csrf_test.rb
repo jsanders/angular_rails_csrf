@@ -47,7 +47,8 @@ class AngularRailsCsrfTest < ActionController::TestCase
     end
 
     get :index
-    assert @response.headers['Set-Cookie'].include?('.test.host')
+
+    assert @response.headers['Set-Cookie'].include?('test.host')
     assert_valid_cookie
     assert_response :success
   ensure
@@ -83,7 +84,8 @@ class AngularRailsCsrfTest < ActionController::TestCase
     config.define_singleton_method(:angular_rails_csrf_httponly) { true }
 
     get :index
-    assert @response.headers['Set-Cookie'].include?('HttpOnly')
+
+    assert @response.headers['Set-Cookie'].include?('httponly')
     assert_valid_cookie
     assert_response :success
   ensure
@@ -125,8 +127,6 @@ class AngularRailsCsrfTest < ActionController::TestCase
   end
 
   private
-
-  # Helpers
 
   def header_to(value)
     @request.headers['X-XSRF-TOKEN'] = value
