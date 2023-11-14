@@ -12,8 +12,6 @@ jobs:
         os: [ubuntu-latest]
         gemfile:
           - Gemfile
-          - gemfiles/Gemfile-rails-6-1
-          - gemfiles/Gemfile-rails-6-0
         ruby:
           - '3.0'
           - 3.1
