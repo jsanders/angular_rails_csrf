@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+* Do not test with Ruby 3.0
+
 ## 6.0.0 (14-Nov-23)
 
 * **Breaking change**: drop support for Ruby < 3. If you need to support older Rubies, stay on v5. If you'd like to support *even older stuff*, v4.5.0 is your choice as it plays nicely with Rails 5.1 and Ruby 2.5.
