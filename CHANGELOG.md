@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-* Do not test with Ruby 3.0
+* Do not test with Ruby 3.0 and 3.1
+* Test with Rails 8
 
 ## 6.0.0 (14-Nov-23)
 
