@@ -42,6 +42,8 @@ module AngularRailsCsrf
     # Fetches the given option from config
     # If the option is not set, return a default value
     def option_from(config, option, default = nil)
+      return default if config.nil?
+
       config.respond_to?(option) ? config.send(option) : default
     end
 

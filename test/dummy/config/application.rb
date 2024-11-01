@@ -13,6 +13,6 @@ module Dummy
                              '437711d0ad314baf13efc0d35d7568d2e469668a7021cf5e945c667bd16507777aedb770f83'
     config.eager_load = false # You get yelled at if you don't set this
     config.active_support.test_order = :random
-    config.load_defaults 7.0
+    config.load_defaults 8.0
   end
 end
