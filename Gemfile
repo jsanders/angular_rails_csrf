@@ -5,7 +5,8 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
-  gem 'rails', '8.0.0.rc2'
+  gem 'fiddle', '~> 1.1', platforms: %i[mingw mswin x64_mingw]
+  gem 'rails', '8.0.0'
   gem 'rake', '~> 13.0'
   gem 'rubocop', '~> 1.0'
   gem 'rubocop-performance', '~> 1.5'

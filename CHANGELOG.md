@@ -1,9 +1,11 @@
 # Changelog
 
-## Unreleased
+## 7.0.0 (12-Nov-24)
 
-* Do not test with Ruby 3.0 and 3.1
+* **Breaking change**: require Ruby 3.2+. If you need support for older Rubies, stay on version 6
+* Set Railties dependency to `< 9`
 * Test with Rails 8
+* Do not test with Ruby 3.0 and 3.1
 
 ## 6.0.0 (14-Nov-23)
 

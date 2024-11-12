@@ -2,10 +2,8 @@
 
 $LOAD_PATH.push File.expand_path('lib', __dir__)
 
-# Maintain your gem's version:
 require 'angular_rails_csrf/version'
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = 'angular_rails_csrf'
   s.version     = AngularRailsCsrf::VERSION
@@ -16,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'AngularJS style CSRF protection for Rails'
   s.license     = 'MIT'
 
-  s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
+  s.files = Dir['lib/**/*', 'LICENSE.md', 'Rakefile', 'README.md', 'CHANGELOG.md']
 
   s.required_ruby_version = '>= 3.2'
 
