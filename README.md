@@ -128,4 +128,4 @@ $ rake test
 
 ## License
 
-Licensed under the [MIT License](https://github.com/jsanders/angular_rails_csrf/blob/master/LICENSE).
+Licensed under the [MIT License](https://github.com/jsanders/angular_rails_csrf/blob/master/LICENSE.md).
